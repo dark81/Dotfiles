@@ -1,0 +1,3 @@
+#include ".Xresources.d/solarized_dark"
+#include ".Xresources.d/rxvt-unicode"
+

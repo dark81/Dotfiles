@@ -1,0 +1,9 @@
+!! Disable scrollbar
+URxvt.scrollBar: false
+
+!! Fix letter spacing for xft fonts
+URxvt.letterSpace: -1
+
+!! Set font
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12
+
