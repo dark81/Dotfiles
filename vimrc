@@ -17,7 +17,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
-" set mouse=a
+set mouse=a
 let g:airline_powerline_fonts=1
 set laststatus=2
 set autoindent
