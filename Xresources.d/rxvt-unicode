@@ -13,5 +13,5 @@ URxvt.matcher.button: 1
 
 !! Set initial size of terminal
 
-URxvt.geometry: 96x57
+URxvt.geometry: 90x44
 
