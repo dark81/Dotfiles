@@ -7,3 +7,11 @@ URxvt.letterSpace: -1
 !! Set font
 URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12
 
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+!! Set initial size of terminal
+
+URxvt.geometry: 96x57
+
