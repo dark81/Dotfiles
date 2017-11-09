@@ -54,7 +54,7 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "unclutter -root" }) -- entries must be comma-separated
+run_once({ "unclutter -root", "xscreensaver -no-splash" }) -- entries must be comma-separated
 -- }}}
 
 -- {{{ Variable definitions
@@ -226,6 +226,12 @@ globalkeys = awful.util.table.join(
     -- https://github.com/lcpz/dots/blob/master/bin/screenshot
     awful.key({ altkey }, "p", function() os.execute("screenshot") end,
               {description = "take a screenshot", group = "hotkeys"}),
+    -- Lock screen
+    awful.key({ modkey,           }, "F12",
+        function()
+            awful.util.spawn("xscreensaver-command -lock")
+        end,
+              {description = "lock screen", group="hotkeys"}),
 
     -- Hotkeys
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
