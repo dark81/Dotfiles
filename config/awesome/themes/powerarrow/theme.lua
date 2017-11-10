@@ -24,7 +24,7 @@ theme.bg_urgent                                 = "#3F3F3F"
 theme.taglist_fg_focus                          = "#00CCFF"
 theme.tasklist_bg_focus                         = "#222222"
 theme.tasklist_fg_focus                         = "#00CCFF"
-theme.border_width                              = 1
+theme.border_width                              = 2
 theme.border_normal                             = "#3F3F3F"
 theme.border_focus                              = "#6F6F6F"
 theme.border_marked                             = "#CC9393"
@@ -74,7 +74,7 @@ theme.widget_task                               = theme.dir .. "/icons/task.png"
 theme.widget_scissors                           = theme.dir .. "/icons/scissors.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = 0
+theme.useless_gap                               = 1
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
 theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
@@ -107,7 +107,7 @@ local binclock = require("themes.powerarrow.binclock"){
 --]]
 
 -- Textclock
-local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, " %H:%M "))
+local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, " %a %d %b %H:%M "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -234,7 +234,7 @@ local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local fsicon = wibox.widget.imagebox(theme.widget_hdd)
 theme.fs = lain.widget.fs({
     options  = "--exclude-type=tmpfs",
-    notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "xos4 Terminus 10" },
+    notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "Terminus 10" },
     settings = function()
         widget:set_markup(markup.font(theme.font, " " .. fs_now.available_gb .. "GB "))
     end

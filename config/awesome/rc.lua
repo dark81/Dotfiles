@@ -82,7 +82,7 @@ local browser      = "firefox"
 local guieditor    = "atom"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "Main", "Dev", "Net", "IM", "Other" }
+awful.util.tagnames = { "Main", "Dev", "Net", "Terms", "Other" }
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -627,7 +627,7 @@ awful.rules.rules = {
     },
 
     -- Titlebars
-    { rule_any = { type = { "dialog", "normal" } },
+    { rule_any = { type = { "dialog" } },
       properties = { titlebars_enabled = true } },
 
     -- Set Firefox to always map on the Net tag on screen 1.
