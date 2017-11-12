@@ -54,7 +54,13 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "unclutter -root", "xscreensaver -no-splash", "mpd --no-daemon" }) -- entries must be comma-separated
+run_once({
+    "unclutter -root",
+    "xscreensaver -no-splash",
+    "mpd --no-daemon",
+    "setxkbmap -layout 'us,ru' -variant ',winkeys,winkeys' -option grp:alt_space_toggle -option terminate:ctrl_alt_bksp",
+    "kbdd"
+}) -- entries must be comma-separated
 -- }}}
 
 -- {{{ Variable definitions

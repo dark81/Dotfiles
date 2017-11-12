@@ -122,13 +122,31 @@ theme.cal = lain.widget.calendar({
     }
 })
 
--- Taskwarrior
+--[[ Taskwarrior
 local task = wibox.widget.imagebox(theme.widget_task)
 lain.widget.contrib.task.attach(task, {
     -- do not colorize output
     show_cmd = "task | sed -r 's/\\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g'"
 })
 task:buttons(awful.util.table.join(awful.button({}, 1, lain.widget.contrib.task.prompt)))
+--]]
+
+-- Keyboard icon
+local kbdwidget = wibox.widget.textbox()
+kbdwidget.text = " Eng "
+kbdwidget.font = theme.font
+kbdwidget.valign = "center"
+
+-- Change icon on dbus event
+dbus.request_name("session", "ru.gentoo.kbdd")
+dbus.add_match("session", "interface='ru.gentoo.kbdd',member='layoutChanged'")
+dbus.connect_signal("ru.gentoo.kbdd", function(...)
+        local data = {...}
+        local layout = data[2]
+        lts = {[0] = "Eng", [1] = "Рус"}
+        kbdwidget.text = " "..lts[layout].." "
+    end
+)
 
 -- Scissors (xsel copy and paste)
 local scissors = wibox.widget.imagebox(theme.widget_scissors)
@@ -364,7 +382,7 @@ function theme.at_screen_connect(s)
             arrow("#343434", theme.bg_normal),
             wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, 3, 6), theme.bg_focus),
             arrow(theme.bg_normal, "#343434"),
-            wibox.container.background(wibox.container.margin(task, 3, 7), "#343434"),
+            wibox.container.background(wibox.container.margin(kbdwidget, 3, 7), "#343434"),
             arrow("#343434", "#777E76"),
             wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, 2, 3), "#777E76"),
             arrow("#777E76", "#4B696D"),
