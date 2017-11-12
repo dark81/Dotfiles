@@ -110,7 +110,7 @@ awful.layout.layouts = {
     --lain.layout.cascade.tile,
     --lain.layout.centerwork,
     --lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
+    lain.layout.termfair,
     --lain.layout.termfair.center,
 }
 awful.util.taglist_buttons = awful.util.table.join(
@@ -165,7 +165,7 @@ awful.util.tasklist_buttons = awful.util.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
-lain.layout.termfair.nmaster           = 3
+lain.layout.termfair.nmaster           = 2
 lain.layout.termfair.ncol              = 1
 lain.layout.termfair.center.nmaster    = 3
 lain.layout.termfair.center.ncol       = 1
