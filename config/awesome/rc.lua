@@ -242,7 +242,8 @@ globalkeys = awful.util.table.join(
     -- Lock screen
     awful.key({ modkey,           }, "F12",
         function()
-            awful.util.spawn("xautolock -locknow")
+            awful.spawn("sync")
+            awful.spawn("xautolock -locknow")
         end,
               {description = "lock screen", group="hotkeys"}),
 
