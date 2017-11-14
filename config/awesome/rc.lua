@@ -56,7 +56,7 @@ end
 
 run_once({
     "unclutter -root",
-    "xscreensaver -no-splash",
+    "xautolock -detectsleep -time 3 -locker \"i3lock -d -i ~/.config/awesome/themes/powerarrow/wall.png\"",
     "mpd --no-daemon",
     "setxkbmap -layout 'us,ru' -variant ',winkeys,winkeys' -option grp:alt_space_toggle -option terminate:ctrl_alt_bksp",
     "kbdd"
@@ -242,7 +242,7 @@ globalkeys = awful.util.table.join(
     -- Lock screen
     awful.key({ modkey,           }, "F12",
         function()
-            awful.util.spawn("xscreensaver-command -lock")
+            awful.util.spawn("xautolock -locknow")
         end,
               {description = "lock screen", group="hotkeys"}),
 
