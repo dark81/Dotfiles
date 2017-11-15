@@ -644,6 +644,10 @@ awful.rules.rules = {
     { rule_any = { type = { "dialog" } },
       properties = { titlebars_enabled = true } },
 
+    -- Set Music player to be floating, to not spoil layouts
+    { rule = { name = "Music" },
+      properties = { titlebars_enabled = true, floating = true } },
+
     -- Set Firefox to always map on the Net tag on screen 1.
     { rule = { class = "Firefox" },
       properties = { screen = 1, tag = awful.util.tagnames[3] } },
