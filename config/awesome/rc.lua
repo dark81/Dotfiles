@@ -658,6 +658,10 @@ awful.rules.rules = {
     { rule = { name = "Music" },
       properties = { titlebars_enabled = true, floating = true } },
 
+    -- About windows
+    { rule = { role = "About" },
+      properties = { titlebars_enabled = true, floating = true } },
+
     -- Set Firefox to always map on the Net tag on screen 1.
     { rule = { class = "Firefox" },
       properties = { screen = 1, tag = awful.util.tagnames[3] } },
