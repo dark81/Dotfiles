@@ -7,7 +7,7 @@ URxvt.letterSpace: -1
 !! Set font
 URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12
 
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,osc-xterm-clipboard
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
