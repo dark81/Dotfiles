@@ -28,6 +28,11 @@ set background=dark
 set t_Co=256
 colorscheme solarized
 
+if has('gui_running')
+    set guioptions-=T  " no toolbar
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+endif
+
 if has("gui_macvim")
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14 
     set guioptions-=T
