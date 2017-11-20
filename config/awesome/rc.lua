@@ -56,7 +56,7 @@ end
 
 run_once({
     "unclutter -root",
-    "xautolock -detectsleep -time 3 -locker \"i3lock -d -i ~/.config/awesome/themes/powerarrow/wall.png\"",
+    "xautolock -detectsleep -time 3 -locker slock",
     "mpd --no-daemon",
     "setxkbmap -layout 'us,ru' -variant ',winkeys,winkeys' -option grp:alt_space_toggle -option terminate:ctrl_alt_bksp",
     "kbdd"
