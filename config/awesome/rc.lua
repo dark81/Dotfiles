@@ -464,6 +464,7 @@ globalkeys = awful.util.table.join(
             beautiful.mpd.update()
         end,
         {description = "mpc stop", group = "widgets"}),
+    --[[ Thic combos conflicts with JetBrains products
     awful.key({ altkey, "Control" }, "Left",
         function ()
             awful.spawn.with_shell("mpc prev")
@@ -476,6 +477,7 @@ globalkeys = awful.util.table.join(
             beautiful.mpd.update()
         end,
         {description = "mpc next", group = "widgets"}),
+    ]]--
     awful.key({ altkey }, "0",
         function ()
             local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }

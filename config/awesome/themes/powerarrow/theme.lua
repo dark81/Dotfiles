@@ -219,7 +219,7 @@ local tempicon = wibox.widget.imagebox(theme.widget_temp)
 -- / fs
 local fsicon = wibox.widget.imagebox(theme.widget_hdd)
 theme.fs = lain.widget.fs({
-    options  = "--exclude-type=tmpfs",
+    options  = "--exclude-type=tmpfs --exclude-type=squashfs",
     notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "Terminus 10" },
     settings = function()
         widget:set_markup(markup.font(theme.font, " " .. fs_now.available_gb .. "GB "))
