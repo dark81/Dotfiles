@@ -55,7 +55,7 @@ local function run_once(cmd_arr)
 end
 
 run_once({
-    "unclutter -root",
+    "unclutter -idle 5 -root -not Telegram",
     "xautolock -detectsleep -time 3 -locker slock",
     "mpd --no-daemon",
     "setxkbmap -layout 'us,ru' -variant ',winkeys,winkeys' -option grp:alt_space_toggle -option terminate:ctrl_alt_bksp",

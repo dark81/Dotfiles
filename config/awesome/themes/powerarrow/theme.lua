@@ -190,7 +190,7 @@ local mem = lain.widget.mem({
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.font(theme.font, " " .. cpu_now.usage .. "% "))
+        widget:set_markup(markup.font(theme.font, " " .. string.format("%02d", cpu_now.usage) .. "% "))
     end
 })
 
@@ -207,7 +207,7 @@ end)
 -- Coretemp (lain, average)
 local temp = lain.widget.temp({
     settings = function()
-        widget:set_markup(markup.font(theme.font, " " .. coretemp_now .. "°C "))
+        widget:set_markup(markup.font(theme.font, " " .. string.format("%02d", coretemp_now) .. "°C "))
     end
 })
 --]]
