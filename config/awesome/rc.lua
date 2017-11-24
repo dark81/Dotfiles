@@ -419,37 +419,13 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end,
               {description = "-10%", group = "hotkeys"}),
 
-    -- ALSA volume control
-    awful.key({ altkey }, "Up",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
+    -- Pulse volume control
+    awful.key({}, "XF86AudioRaiseVolume", beautiful.volume.Up,
         {description = "volume up", group = "hotkeys"}),
-    awful.key({ altkey }, "Down",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
+    awful.key({}, "XF86AudioLowerVolume", beautiful.volume.Down,
         {description = "volume down", group = "hotkeys"}),
-    awful.key({ altkey }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
+    awful.key({ altkey }, "m", beautiful.volume.ToggleMute,
         {description = "toggle mute", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 100%", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "0",
-        function ()
-            os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 0%", group = "hotkeys"}),
 
     -- MPD control
     awful.key({ altkey, "Control" }, "Up",
@@ -662,6 +638,10 @@ awful.rules.rules = {
 
     -- About windows
     { rule = { role = "About" },
+      properties = { titlebars_enabled = true, floating = true } },
+      --
+    -- Pulse audio control
+    { rule = { class = "Pavucontrol" },
       properties = { titlebars_enabled = true, floating = true } },
 
     -- Set Firefox to always map on the Net tag on screen 1.

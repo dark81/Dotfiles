@@ -141,11 +141,8 @@ dbus.connect_signal("ru.gentoo.kbdd", function(...)
 local scissors = wibox.widget.imagebox(theme.widget_scissors)
 scissors:buttons(awful.util.table.join(awful.button({}, 1, function() awful.spawn("xsel | xsel -i -b") end)))
 
--- ALSA volume
-theme.volume = lain.widget.alsabar({
-    --togglechannel = "IEC958,3",
-    notification_preset = { font = "Terminus 10", fg = theme.fg_normal },
-})
+-- Pulse volume
+theme.volume = require("apw/widget")
 
 -- MPD
 local musicplr = awful.util.terminal .. " -title Music -g 130x34-320+16 -e ncmpcpp"
@@ -332,6 +329,7 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
             wibox.container.margin(scissors, 4, 8),
+            wibox.container.margin(theme.volume, 0, 8, 3, 3),
             --[[ using shapes
             pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             pl(task, "#343434"),
