@@ -207,7 +207,13 @@ end)
 -- Coretemp (lain, average)
 local temp = lain.widget.temp({
     settings = function()
-        widget:set_markup(markup.font(theme.font, " " .. string.format("%02d", coretemp_now) .. "°C "))
+        local temp_str
+        if coretemp_now == "N/A" then
+            temp_str = " N/A "
+        else
+            temp_str = " " .. string.format("%02d", coretemp_now) .. "°C "
+        end
+        widget:set_markup(markup.font(theme.font, temp_str))
     end
 })
 --]]
