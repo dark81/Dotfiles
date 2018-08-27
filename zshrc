@@ -1,8 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -53,7 +52,12 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow pip tmux ubuntu sudo)
+
+if [[ `uname` == 'Darwin' ]]; then
+    plugins=(git osx xcode brew tmux sudo docker pip python virtualenv iterm2)
+elif [[ `uname` == 'Linux' ]]; then
+    plugins=(git git-flow pip tmux sudo)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,7 +88,11 @@ export VISUAL='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Golang configuration
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Local zsh configuration
 if [ -f ~/.zsh.local ]; then
     source ~/.zsh.local
 fi
-
