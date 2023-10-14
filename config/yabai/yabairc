@@ -1,0 +1,68 @@
+#!/usr/bin/env sh
+
+source "$HOME/.config/colors.sh"
+
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+yabai -m config --space 1 layout stack
+
+# common configuration
+yabai -m config external_bar all:48:0 \
+	window_border on \
+	mouse_follows_focus off \
+	focus_follows_mouse off \
+	window_zoom_persist off \
+	window_placement second_child \
+	window_topmost off \
+	normal_window_opacity 0.0 \
+	window_border_width 2 \
+	window_border_hidpi off \
+	window_border_radius 11 \
+	window_border_blur off \
+	window_animation_duration 0.3 \
+	insert_feedback_color 0xffd75f5f \
+	active_window_border_color $COLOR_ACCENT_BRIGHT \
+	normal_window_border_color $COLOR_BACKGROUND \
+	\
+	split_ratio 0.50 \
+	auto_balance off \
+	mouse_modifier alt \
+	mouse_action1 move \
+	mouse_action2 resize \
+	mouse_drop_action swap \
+	top_padding 10 \
+	bottom_padding 4 \
+	left_padding 4 \
+	right_padding 4 \
+	window_gap 6
+
+# insert_feedback_color 0xff9dd274 # normal_window_border_color 0xff494d64 #               active_window_border_color 0xffe1e3e4   \
+
+# integration with sketchybar
+yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
+yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
+
+# rename workspaces
+yabai -m space 1 --label Work
+yabai -m space 2 --label Web
+yabai -m space 3 --label Term
+yabai -m space 4 --label Dev
+yabai -m space 5 --label Mail
+yabai -m space 6 --label Media
+yabai -m space 7 --label Misc
+
+# disable specific apps
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+yabai -m rule --add app="^Wireshark$" title="Software Update" manage=off
+yabai -m rule --add app="System Information" title="^$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+
+# Configure options for JebBrains products
+# make JetBrains products popup windows float
+apps='^(IntelliJ IDEA|WebStorm|GoLand|PyCharm)$'
+yabai -m rule --add app="JetBrains Toolbox" manage=off
+yabai -m rule --add app="${apps}" manage=off
+yabai -m rule --add app="${apps}" title="( – )" manage=on
