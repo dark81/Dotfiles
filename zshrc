@@ -108,5 +108,25 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Setup zoxide
-eval "$(zoxide init zsh)"
+if command -v zoxide>/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# Setup direnv
+if command -v direnv>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
+# Enable pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Add aliases for exa
+if command -v exa >/dev/null; then
+  alias ll="exa -l"
+  alias la="exa -la"
+  alias lah="exa -lah"
+  alias lt="exa -lT"
+fi
 
