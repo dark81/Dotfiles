@@ -120,7 +120,9 @@ fi
 # Enable pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if command -v pyenv >/dev/null; then
+  eval "$(pyenv init -)"
+fi
 
 # Add aliases for exa
 if command -v exa >/dev/null; then
