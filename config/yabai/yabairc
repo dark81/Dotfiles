@@ -52,7 +52,7 @@ yabai -m space 6 --label Media
 yabai -m space 7 --label Misc
 
 # disable specific apps
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|FaceTime)$" manage=off
 yabai -m rule --add app="^Wireshark$" title="Software Update" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="System Information" title="^$" manage=off
