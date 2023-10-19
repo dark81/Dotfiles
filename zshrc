@@ -60,11 +60,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-if [[ `uname` == 'Darwin' ]]; then
-    plugins=(git brew tmux sudo docker pip python virtualenv zsh-autosuggestions zsh-syntax-highlighting)
-elif [[ `uname` == 'Linux' ]]; then
-    plugins=(git git-flow pip tmux sudo)
-fi
+plugins=(git brew tmux sudo docker pip python zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
