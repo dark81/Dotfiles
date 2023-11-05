@@ -128,3 +128,9 @@ if command -v exa >/dev/null; then
   alias lt="exa -lT"
 fi
 
+
+# Clear screen and history buffer in tmux
+if [[ $TMUX ]]; then
+  alias tc='clear && tmux clear-history'
+fi
+
