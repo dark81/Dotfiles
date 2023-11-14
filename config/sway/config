@@ -51,7 +51,7 @@ set $term /usr/bin/alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show drun -Im
+set $menu wofi --show drun --prompt "What do you want to run?" -Im
 
 include /etc/sway/config-vars.d/*
 
