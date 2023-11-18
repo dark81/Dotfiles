@@ -1,3 +1,8 @@
+*{
+  font-size: 16pt;
+}
+
+
 window {
 margin: 0px;
 border: 1px solid #928374;
