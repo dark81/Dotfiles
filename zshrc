@@ -14,8 +14,11 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 DEFAULT_USER=$(whoami)
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
+if [[ "${TERM}" = "linux" ]]; then
+  ZSH_THEME="essembeh"
+else
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
