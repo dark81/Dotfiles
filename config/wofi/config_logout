@@ -1,4 +1,4 @@
-prompt=Select action?
+prompt=Select an action?
 allow_images=false
 allow_markup=false
 columns=2

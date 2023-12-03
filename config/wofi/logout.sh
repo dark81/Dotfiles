@@ -1,13 +1,13 @@
 #! /usr/bin/env bash
 
-WOFI_CMD="${WOFI_CMD:-wofi --dmenu --conf /home/dark81/.config/wofi/config_logout}"
+WOFI_CMD="${WOFI_CMD:-wofi --dmenu --conf $HOME/.config/wofi/config_logout}"
 
 LOCK_SCREEN="󰌾 Lock Screen"
 LOGOUT="󰍃 Logout     "
 SHUTDOWN="󰐥 Power Off  "
 REBOOT="󰁪 Reboot     "
 
-chosen=$(echo -e "${LOCK_SCREEN}\n${LOGOUT}\n${SHUTDOWN}\n${REBOOT}\n" | $WOFI_CMD)
+chosen=$(echo -e "${LOCK_SCREEN}\n${LOGOUT}\n${SHUTDOWN}\n${REBOOT}" | $WOFI_CMD)
 
 if [[ $chosen = "${LOGOUT}" ]]; then
 	swaymsg exit
