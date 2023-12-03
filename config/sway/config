@@ -6,8 +6,7 @@
 # Theme
 
 smart_gaps on
-gaps horizontal 10
-gaps vertical 10
+gaps top 0
 gaps inner 10
 
 font pango: Hack Nerd Font Mono 18
@@ -266,5 +265,8 @@ bindsym $mod+r mode "resize"
 include ~/.config/sway/config.d/*
 
 exec_always gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
+exec_always gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 exec_always import-gsettings
+exec blueman-applet
+exec udiskie --tray
 
