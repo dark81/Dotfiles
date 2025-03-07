@@ -131,6 +131,13 @@ if command -v exa >/dev/null; then
   alias lt="exa -lT"
 fi
 
+# Add aliases for eza (exa replacement)
+if command -v eza >/dev/null; then
+  alias ll="eza -l --hyperlink"
+  alias la="eza -la --hyperlink"
+  alias lt="eza -lT --hyperlink"
+fi
+
 
 # Clear screen and history buffer in tmux
 if [[ $TMUX ]]; then
