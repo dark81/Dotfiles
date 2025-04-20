@@ -144,3 +144,7 @@ if [[ $TMUX ]]; then
   alias tc='clear && tmux clear-history'
 fi
 
+
+# Midnight Commander very slow on start with zsh as subshell.
+# That's why I am disable subshell
+alias mc='mc -u'
