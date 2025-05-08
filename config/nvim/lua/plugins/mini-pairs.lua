@@ -1,20 +1,8 @@
 return {
   "echasnovski/mini.pairs",
   event = "VeryLazy",
-  keys = {
-    {
-      "<leader>tp",
-      function()
-        vim.b.minipairs_disable = not vim.b.minipairs_disable
-        local state = vim.b.minipairs_disable and "disabled" or "enabled"
-        vim.notify("mini-pairs " .. state)
-      end,
-      desc = "Toggle mini pairs",
-    },
-  },
   opts = {
     modes = { insert = true, command = false, terminal = false },
-
     mappings = {
       [")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
       ["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
@@ -59,7 +47,7 @@ return {
         -- | foobar -> press "(" -> () foobar
         -- foobar | -> press "(" -> foobar ()
       },
-      -- Single quote: Prevent pairing if either side is a letter
+      -- Double quote: Prevent pairing if either side is a letter
       ['"'] = {
         action = "closeopen",
         pair = '""',
