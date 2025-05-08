@@ -119,9 +119,10 @@ fi
 # Enable pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv >/dev/null; then
-  eval "$(pyenv init -)"
-fi
+# I am not using pyenv automatic interpreter switching
+# if command -v pyenv >/dev/null; then
+#   eval "$(pyenv init -)"
+# fi
 
 # Add aliases for exa
 if command -v exa >/dev/null; then
@@ -138,6 +139,10 @@ if command -v eza >/dev/null; then
   alias lt="eza -lT --hyperlink"
 fi
 
+# Add fzf functions to shell
+if command -v fzf >/dev/null; then
+  eval "$(fzf --zsh)"
+fi
 
 # Clear screen and history buffer in tmux
 if [[ $TMUX ]]; then
@@ -145,6 +150,6 @@ if [[ $TMUX ]]; then
 fi
 
 
-# Midnight Commander very slow on start with zsh as subshell.
-# That's why I am disable subshell
+# Midnight Commander very slow on start with zsh as sub shell.
+# That's why I am disable sub shell
 alias mc='mc -u'
