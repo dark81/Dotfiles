@@ -1,3 +1,5 @@
+# Print out system information
+command -v fastfetch >/dev/null && fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -119,10 +121,9 @@ fi
 # Enable pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# I am not using pyenv automatic interpreter switching
-# if command -v pyenv >/dev/null; then
-#   eval "$(pyenv init -)"
-# fi
+if command -v pyenv >/dev/null; then
+  eval "$(pyenv init -)"
+fi
 
 # Add aliases for exa
 if command -v exa >/dev/null; then
