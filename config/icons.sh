@@ -7,7 +7,8 @@ export ICON_COG=󰒓 # system settings, system information, tinkertool
 export ICON_CHART=󱕍 # activity monitor, btop
 export ICON_LOCK=󰌾
 
-export ICONS_SPACE=(󰎤 󰎧 󰎪 󰎭 󰎱 󰎳 󰎶)
+# export ICONS_SPACE=(󰎤 󰎧 󰎪 󰎭 󰎱 󰎳 󰎶)
+export ICONS_SPACE=(󰎤 󰎧 󰎪 󰎭 󰎱)
 
 export ICON_APP=󰣆 # fallback app
 export ICON_TERM=󰆍 # fallback terminal app, terminal, warp, iterm2
