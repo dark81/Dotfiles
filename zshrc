@@ -142,7 +142,7 @@ fi
 
 # Add fzf functions to shell
 if command -v fzf >/dev/null; then
-  eval "$(fzf --zsh)"
+  eval "$(fzf --zsh 2>/dev/null)"
 fi
 
 # Clear screen and history buffer in tmux
