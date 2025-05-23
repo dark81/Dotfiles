@@ -12,7 +12,6 @@ yabai -m config external_bar all:30:0 \
   focus_follows_mouse off \
   window_zoom_persist off \
   window_placement second_child \
-  \
   split_ratio 0.50 \
   auto_balance off \
   mouse_modifier alt \
@@ -49,12 +48,14 @@ yabai -m rule --add label="About This Mac" app="System Information" title="About
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 yabai -m rule --add app="^Logi Options+$" manage=off
 yabai -m rule --add app="^AZTClient$" manage=off
+yabai -m rule --add app="^YouTube Music$" manage=off
 # Configure options for JebBrains products
 # make JetBrains products popup windows float
 apps='^(IntelliJ IDEA|WebStorm|GoLand|PyCharm)$'
 yabai -m rule --add app="JetBrains Toolbox" manage=off
 yabai -m rule --add app="${apps}" manage=off
 yabai -m rule --add app="${apps}" title="( – )" manage=on
+yabai -m rule --add app="${apps}" title="^$" manage=on
 # move some apps automatically to specific spaces
 yabai -m rule --add app="^Google Chrome$" space=1
 yabai -m rule --add app="^Firefox$" space=1
