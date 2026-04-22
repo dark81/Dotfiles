@@ -109,11 +109,6 @@ export VISUAL='nvim'
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# Local zsh configuration
-if [ -f ~/.zsh.local ]; then
-    source ~/.zsh.local
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -163,3 +158,9 @@ fi
 # Midnight Commander very slow on start with zsh as sub shell.
 # That's why I am disable sub shell
 alias mc='mc -u'
+
+# Local zsh configuration
+if [ -f ~/.zsh.local ]; then
+    source ~/.zsh.local
+fi
+
