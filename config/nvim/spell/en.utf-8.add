@@ -15,3 +15,8 @@ ip
 config
 ctx
 pathlib
+datasource
+md
+UIDs
+InfluxDB
+environmentName
